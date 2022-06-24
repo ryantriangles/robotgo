@@ -49,8 +49,6 @@ RobotGo supports macOS, Windows, and Linux(X11); and robotgo supports arm64 and 
 
 ## Requirements
 
-Now, Please make sure `Golang, GCC` is installed correctly before installing RobotGo.
-
 ### ALL
 
 ```
