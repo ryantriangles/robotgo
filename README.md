@@ -1,4 +1,4 @@
-# Robotgo
+# RobotGo
 
 <!--<img align="right" src="https://raw.githubusercontent.com/go-vgo/robotgo/master/logo.jpg">-->
 <!--[![Build Status](https://travis-ci.org/go-vgo/robotgo.svg)](https://travis-ci.org/go-vgo/robotgo)
@@ -19,7 +19,7 @@
 
 > Golang Desktop Automation. Control the mouse, keyboard, bitmap and image, read the screen, process, Window Handle and global event listener.
 
-RobotGo supports macOS, Windows, and Linux(X11); and robotgo supports arm64 and x86-amd64.
+RobotGo supports macOS, Windows, and Linux(X11); and RobotGo supports arm64 and x86-amd64.
 
 ## Contents
 
@@ -83,7 +83,7 @@ With Go module support (Go 1.11+), just import:
 import "github.com/go-vgo/robotgo"
 ```
 
-Otherwise, to install the robotgo package, run the command:
+Otherwise, to install the RobotGo package, run the command:
 
 ```
 go get github.com/go-vgo/robotgo
@@ -516,6 +516,6 @@ Some discussions and questions, please see [issues/228](https://github.com/go-vg
 
 ## License
 
-Robotgo is primarily distributed under the terms of both the MIT license and the Apache License (Version 2.0), with portions covered by various BSD-like licenses.
+RobotGo is primarily distributed under the terms of both the MIT license and the Apache License (Version 2.0), with portions covered by various BSD-like licenses.
 
 See [LICENSE-APACHE](http://www.apache.org/licenses/LICENSE-2.0), [LICENSE-MIT](https://github.com/go-vgo/robotgo/blob/master/LICENSE).
