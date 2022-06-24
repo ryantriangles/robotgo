@@ -23,12 +23,12 @@ func Pids() ([]int32, error) {
 	return ps.Pids()
 }
 
-// PidExists determine whether the process exists
+// PidExists determines whether a process with a given ID exists.
 func PidExists(pid int32) (bool, error) {
 	return ps.PidExists(pid)
 }
 
-// Process get the all process struct
+// Process returns a struct describing all processes.
 func Process() ([]Nps, error) {
 	var npsArr []Nps
 	nps, err := ps.Process()
@@ -44,34 +44,33 @@ func Process() ([]Nps, error) {
 	return npsArr, err
 }
 
-// FindName find the process name by the process id
+// FindName returns a process's name given its ID.
 func FindName(pid int32) (string, error) {
 	return ps.FindName(pid)
 }
 
-// FindNames find the all process name
+// FindNames returns a slice of all process names.
 func FindNames() ([]string, error) {
 	return ps.FindNames()
 }
 
-// FindIds finds the all processes named with a subset
-// of "name" (case insensitive),
-// return matched IDs.
+// FindIds finds the IDs of all processes named with a subset of "name" (case
+// insensitive).
 func FindIds(name string) ([]int32, error) {
 	return ps.FindIds(name)
 }
 
-// FindPath find the process path by the process pid
+// FindPath finds a process's path given its ID.
 func FindPath(pid int32) (string, error) {
 	return ps.FindPath(pid)
 }
 
-// Run run a cmd shell
+// Run runs a cmd shell.
 func Run(path string) ([]byte, error) {
 	return ps.Run(path)
 }
 
-// Kill kill the process by PID
+// Kill kills a process given its ID.
 func Kill(pid int32) error {
 	return ps.Kill(pid)
 }
