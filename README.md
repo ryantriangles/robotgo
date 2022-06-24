@@ -51,9 +51,7 @@ RobotGo supports macOS, Windows, and Linux(X11); and robotgo supports arm64 and 
 
 ### ALL
 
-```
-GCC
-```
+- GCC
 
 #### For macOS
 
@@ -67,30 +65,29 @@ xcode-select --install
 
 [MinGW-w64](https://sourceforge.net/projects/mingw-w64/files) (Use recommended)
 
-```
 Or the other GCC (But you should compile the "libpng" with yourself when use the bitmap.)
-```
 
 #### For everything else
 
-```
-GCC
+- GCC
+- X11 with the XTest extension (the Xtst library)
 
-X11 with the XTest extension (the Xtst library)
+Requirements for specific packages:
 
+##### "bitmap"
 
-"Bitmap":
+- libpng
 
-libpng (Just used by bitmap)
+##### "event"
 
-"Event":
+- xcb
+- xkb
+- libxkbcommon
 
-xcb, xkb, libxkbcommon
+##### "clipboard"
 
-"Clipboard":
-
-xsel xclip
-```
+- xsel
+- xclip
 
 ##### Ubuntu
 
