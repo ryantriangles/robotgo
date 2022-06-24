@@ -49,42 +49,40 @@ RobotGo supports macOS, Windows, and Linux(X11); and robotgo supports arm64 and 
 
 ## Requirements
 
-### ALL
+### All operating systems
 
 - GCC
 
-#### For macOS
+### macOS
 
-Xcode Command Line Tools (And Privacy setting: [#277](https://github.com/go-vgo/robotgo/issues/277) )
+- Xcode Command Line Tools (and privacy setting [#277](https://github.com/go-vgo/robotgo/issues/277))
 
 ```
 xcode-select --install
 ```
 
-#### For Windows
+### Windows
 
-[MinGW-w64](https://sourceforge.net/projects/mingw-w64/files) (Use recommended)
+- [MinGW-w64](https://sourceforge.net/projects/mingw-w64/files) (Use the Recommended option), or the other GCC (But you should compile the libpng yourself for the bitmap package)
 
-Or the other GCC (But you should compile the "libpng" with yourself when use the bitmap.)
-
-#### For everything else
+### Everything else
 
 - GCC
 - X11 with the XTest extension (the Xtst library)
 
-Requirements for specific packages:
+#### Specific package requirements
 
-##### "bitmap"
+##### bitmap
 
 - libpng
 
-##### "event"
+##### event
 
 - xcb
 - xkb
 - libxkbcommon
 
-##### "clipboard"
+##### clipboard
 
 - xsel
 - xclip
@@ -479,9 +477,9 @@ func main() {
 }
 ```
 
-## CrossCompiling
+## Cross Compiling
 
-##### Windows64 to windows32
+##### 64-bit Windows to 32-bit Windows
 
 ```Go
 SET CGO_ENABLED=1
@@ -489,7 +487,7 @@ SET GOARCH=386
 go build main.go
 ```
 
-#### Other to windows
+#### Other operating systems to Windows
 
 Install Requirements (Ubuntu, Just used by bitmap.):
 
@@ -515,17 +513,17 @@ Some discussions and questions, please see [issues/228](https://github.com/go-vg
 
 ## Authors
 
-- [The author is vz](https://github.com/vcaesar)
+- The author is [vz](https://github.com/vcaesar)
 - [Maintainers](https://github.com/orgs/go-vgo/people)
 - [Contributors](https://github.com/go-vgo/robotgo/graphs/contributors)
 
 ## Plans
 
-- Refactor some C code to Go (such as x11, windows)
+- Refactor some C code to Go (such as x11, Windows)
 - Better multiscreen support
-- Waylad supports
+- Wayland support
 - Update Window Handle
-- Try support Android and IOS
+- Try to support Android and iOS
 
 ## Contributors
 
@@ -534,6 +532,6 @@ Some discussions and questions, please see [issues/228](https://github.com/go-vg
 
 ## License
 
-Robotgo is primarily distributed under the terms of "both the MIT license and the Apache License (Version 2.0)", with portions covered by various BSD-like licenses.
+Robotgo is primarily distributed under the terms of both the MIT license and the Apache License (Version 2.0), with portions covered by various BSD-like licenses.
 
 See [LICENSE-APACHE](http://www.apache.org/licenses/LICENSE-2.0), [LICENSE-MIT](https://github.com/go-vgo/robotgo/blob/master/LICENSE).
