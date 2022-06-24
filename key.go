@@ -201,7 +201,8 @@ const (
 	LightsKbdDown   = "lights_kbd_down"
 )
 
-// keyNames define MMKeyCode map
+// keyNames defines a map of human-readable key names (e.g. "backspace") to
+// MMKeyCode values.
 var keyNames = map[string]C.MMKeyCode{
 	"backspace": C.K_BACKSPACE,
 	"delete":    C.K_DELETE,
@@ -441,7 +442,7 @@ func keyToggles(k string, keyArr []string, pid int) error {
 
 */
 
-// ToInterfaces []string to []interface{}
+// ToInterfaces converts a []string to an []interface{}.
 func ToInterfaces(fields []string) []interface{} {
 	res := make([]interface{}, 0, len(fields))
 	for _, s := range fields {
@@ -450,7 +451,7 @@ func ToInterfaces(fields []string) []interface{} {
 	return res
 }
 
-// ToStrings []interface{} to []string
+// ToStrings converts an []interface{} to a []string.
 func ToStrings(fields []interface{}) []string {
 	res := make([]string, 0, len(fields))
 	for _, s := range fields {
@@ -467,7 +468,7 @@ func toErr(str *C.char) error {
 	return errors.New(gstr)
 }
 
-// KeyTap tap the keyboard code;
+// KeyTap taps the named keys, e.g. "f1"
 //
 // See keys:
 //	https://github.com/go-vgo/robotgo/blob/master/docs/keys.md
@@ -512,7 +513,9 @@ func KeyTap(key string, args ...interface{}) error {
 	return keyTaps(key, keyArr, pid)
 }
 
-// KeyToggle toggle the keyboard, if there not have args default is "down"
+// KeyToggle toggles the specified keys.
+//
+// Default: "down" (down arrow).
 //
 // See keys:
 //	https://github.com/go-vgo/robotgo/blob/master/docs/keys.md
@@ -520,9 +523,7 @@ func KeyTap(key string, args ...interface{}) error {
 // Examples:
 //	robotgo.KeyToggle("a")
 //	robotgo.KeyToggle("a", "up")
-//
 //	robotgo.KeyToggle("a", "up", "alt", "cmd")
-//
 func KeyToggle(key string, args ...interface{}) error {
 
 	if len(key) > 0 && unicode.IsUpper([]rune(key)[0]) {
@@ -549,7 +550,7 @@ func KeyToggle(key string, args ...interface{}) error {
 	return keyToggles(key, keyArr, pid)
 }
 
-// KeyPress press key string
+// KeyPress presses and releases the specified keys.
 func KeyPress(key string, args ...interface{}) error {
 	err := KeyDown(key, args...)
 	if err != nil {
@@ -560,24 +561,24 @@ func KeyPress(key string, args ...interface{}) error {
 	return KeyUp(key, args...)
 }
 
-// KeyDown press down a key
+// KeyDown presses the specified keys and does not release them.
 func KeyDown(key string, args ...interface{}) error {
 	return KeyToggle(key, args...)
 }
 
-// KeyUp press up a key
+// KeyUp releases the specified keys.
 func KeyUp(key string, args ...interface{}) error {
 	arr := []interface{}{"up"}
 	arr = append(arr, args...)
 	return KeyToggle(key, arr...)
 }
 
-// ReadAll read string from clipboard
+// ReadAll returns the clipboard contents as a string.
 func ReadAll() (string, error) {
 	return clipboard.ReadAll()
 }
 
-// WriteAll write string to clipboard
+// WriteAll writes a string to the clipboard.
 func WriteAll(text string) error {
 	return clipboard.WriteAll(text)
 }
@@ -605,7 +606,7 @@ func UnicodeType(str uint32, args ...int) {
 	C.unicodeType(cstr, C.int32_t(pid))
 }
 
-// ToUC trans string to unicode []string
+// ToUC converts a string to a slice of Unicode strings.
 func ToUC(text string) []string {
 	var uc []string
 
@@ -633,13 +634,12 @@ func inputUTF(str string) {
 	C.free(unsafe.Pointer(cstr))
 }
 
-// TypeStr send a string, supported UTF-8
+// TypeStr types each character of a string.
 //
 // robotgo.TypeStr(string: "The string to send", int: pid, "milli_sleep time", "x11 option")
 //
 // Examples:
 //	robotgo.TypeStr("abc@123, Hi galaxy, こんにちは")
-//
 func TypeStr(str string, args ...int) {
 	var tm, tm1 = 0, 7
 
@@ -681,8 +681,8 @@ func TypeStr(str string, args ...int) {
 	MilliSleep(KeySleep)
 }
 
-// PasteStr paste a string, support UTF-8,
-// write the string to clipboard and tap `cmd + v`
+// PasteStr writes a string to the clipboard and then preses Cmd+V (on MacOS)
+// or Ctrl+V (other operating systems), presumed to be the paste shortcut.
 func PasteStr(str string) error {
 	err := clipboard.WriteAll(str)
 	if err != nil {
@@ -696,13 +696,14 @@ func PasteStr(str string) error {
 	return KeyTap("v", "control")
 }
 
-// TypeStrDelay type string delayed
+// TypeStrDelay types a string and sleeps for the specified number of
+// of milliseconds.
 func TypeStrDelay(str string, delay int) {
 	TypeStr(str)
 	MilliSleep(delay)
 }
 
-// Deprecated: use the TypeStr(),
+// Deprecated: use TypeStr().
 //
 // TypeStringDelayed type string delayed, Wno-deprecated
 //
@@ -712,7 +713,7 @@ func TypeStringDelayed(str string, delay int) {
 	TypeStrDelay(str, delay)
 }
 
-// SetDelay set the key and mouse delay
+// SetDelay sets the key and mouse delay.
 func SetDelay(d ...int) {
 	v := 10
 	if len(d) > 0 {
