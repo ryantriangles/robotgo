@@ -38,7 +38,7 @@ RobotGo supports macOS, Windows, and Linux(X11); and robotgo supports arm64 and 
 
 ## Docs
 
-- [GoDoc](https://godoc.org/github.com/go-vgo/robotgo) <br>
+- [GoDoc](https://godoc.org/github.com/go-vgo/robotgo)
 - [API Docs](https://github.com/go-vgo/robotgo/blob/master/docs/doc.md) (Deprecated, no updated)
 
 ## Binding
