@@ -19,7 +19,7 @@
 
 > Golang Desktop Automation. Control the mouse, keyboard, bitmap and image, read the screen, process, Window Handle and global event listener.
 
-RobotGo supports Mac, Windows, and Linux(X11); and robotgo supports arm64 and x86-amd64.
+RobotGo supports macOS, Windows, and Linux(X11); and robotgo supports arm64 and x86-amd64.
 
 ## Contents
 
@@ -59,7 +59,7 @@ Golang
 GCC
 ```
 
-#### For Mac OS X
+#### For macOS
 
 Xcode Command Line Tools (And Privacy setting: [#277](https://github.com/go-vgo/robotgo/issues/277) )
 
