@@ -52,8 +52,6 @@ RobotGo supports macOS, Windows, and Linux(X11); and robotgo supports arm64 and 
 ### ALL
 
 ```
-Golang
-
 GCC
 ```
 
