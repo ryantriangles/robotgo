@@ -328,7 +328,7 @@ func tapKeyCode(code C.MMKeyCode, flags C.MMKeyFlags, pid C.int32_t) {
 	C.toggleKeyCode(code, false, flags, pid)
 }
 
-var errInvalidKeyFlag = errors.New("Invalid key flag specified.")
+var errInvalidKeyFlag = errors.New("invalid key flag specified")
 
 func checkKeyCodes(k string) (key C.MMKeyCode, err error) {
 	if k == "" {
