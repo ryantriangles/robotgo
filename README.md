@@ -65,60 +65,15 @@ xcode-select --install
 
 - [MinGW-w64](https://sourceforge.net/projects/mingw-w64/files) (Use the Recommended option), or the other GCC (But you should compile the libpng yourself for the bitmap package)
 
-### Everything else
+### Linux and everything else
 
 - X11 with the XTest extension (the Xtst library)
-
-#### Specific package requirements
-
-##### bitmap
-
-- libpng
-
-##### event
-
-- xcb
-- xkb
-- libxkbcommon
-
-##### clipboard
-
-- xsel
-- xclip
-
-##### Ubuntu
-
-```yml
-# gcc
-sudo apt install gcc libc6-dev
-
-# x11
-sudo apt install libx11-dev xorg-dev libxtst-dev
-
-# Bitmap
-sudo apt install libpng++-dev
-
-# Hook
-sudo apt install xcb libxcb-xkb-dev x11-xkb-utils libx11-xcb-dev libxkbcommon-x11-dev libxkbcommon-dev
-
-# Clipboard
-sudo apt install xsel xclip
-```
-
-##### Fedora
-
-```yml
-sudo dnf install libXtst-devel
-
-# Bitmap
-sudo dnf install libpng-devel
-
-# Hook
-sudo dnf install libxkbcommon-devel libxkbcommon-x11-devel xorg-x11-xkb-utils-devel
-
-# Clipboard
-sudo dnf install xsel xclip
-```
+- libpng (for bitmap module)
+- xkcb (for event module)
+- xkb (for event module)
+- libxkbcommon (for event module)
+- xsel (for clipboard module)
+- xclip (for clipboard module)
 
 ## Installation
 
@@ -135,6 +90,36 @@ go get github.com/go-vgo/robotgo
 ```
 
 png.h: No such file or directory? Please see [issues/47](https://github.com/go-vgo/robotgo/issues/47).
+
+### Ubuntu dependencies
+
+```bash
+sudo apt install gcc libc6-dev libx11-dev xorg-dev libxtst-dev
+
+# if using Bitmap
+sudo apt install libpng++-dev
+
+# if using Hook
+sudo apt install xcb libxcb-xkb-dev x11-xkb-utils libx11-xcb-dev libxkbcommon-x11-dev libxkbcommon-dev
+
+# if using Clipboard
+sudo apt install xsel xclip
+```
+
+### Fedora dependencies
+
+```bash
+sudo dnf install libXtst-devel
+
+# if using Bitmap
+sudo dnf install libpng-devel
+
+# if using Hook
+sudo dnf install libxkbcommon-devel libxkbcommon-x11-devel xorg-x11-xkb-utils-devel
+
+# if using Clipboard
+sudo dnf install xsel xclip
+```
 
 ## Update
 
