@@ -67,7 +67,6 @@ xcode-select --install
 
 ### Everything else
 
-- GCC
 - X11 with the XTest extension (the Xtst library)
 
 #### Specific package requirements
