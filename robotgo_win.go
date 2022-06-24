@@ -22,7 +22,8 @@ import (
 
 // FindWindow find window hwnd by name
 func FindWindow(name string) win.HWND {
-	hwnd := win.FindWindow(nil, syscall.StringToUTF16Ptr(name))
+	namePtr, _ := syscall.UTF16PtrFromString(name)
+	hwnd := win.FindWindow(nil, namePtr)
 	return hwnd
 }
 
