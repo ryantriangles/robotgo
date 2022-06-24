@@ -41,17 +41,17 @@ RobotGo supports Mac, Windows, and Linux(X11); and robotgo supports arm64 and x8
 - [GoDoc](https://godoc.org/github.com/go-vgo/robotgo) <br>
 - [API Docs](https://github.com/go-vgo/robotgo/blob/master/docs/doc.md) (Deprecated, no updated)
 
-## Binding:
+## Binding
 
 [ADB](https://github.com/vcaesar/adb), packaging android adb API.
 
 [Robotn](https://github.com/vcaesar/robotn), binding JavaScript and other, support more language.
 
-## Requirements:
+## Requirements
 
 Now, Please make sure `Golang, GCC` is installed correctly before installing RobotGo.
 
-### ALL:
+### ALL
 
 ```
 Golang
@@ -59,7 +59,7 @@ Golang
 GCC
 ```
 
-#### For Mac OS X:
+#### For Mac OS X
 
 Xcode Command Line Tools (And Privacy setting: [#277](https://github.com/go-vgo/robotgo/issues/277) )
 
@@ -67,7 +67,7 @@ Xcode Command Line Tools (And Privacy setting: [#277](https://github.com/go-vgo/
 xcode-select --install
 ```
 
-#### For Windows:
+#### For Windows
 
 [MinGW-w64](https://sourceforge.net/projects/mingw-w64/files) (Use recommended)
 
@@ -75,7 +75,7 @@ xcode-select --install
 Or the other GCC (But you should compile the "libpng" with yourself when use the bitmap.)
 ```
 
-#### For everything else:
+#### For everything else
 
 ```
 GCC
@@ -96,7 +96,7 @@ xcb, xkb, libxkbcommon
 xsel xclip
 ```
 
-##### Ubuntu:
+##### Ubuntu
 
 ```yml
 # gcc
@@ -115,7 +115,7 @@ sudo apt install xcb libxcb-xkb-dev x11-xkb-utils libx11-xcb-dev libxkbcommon-x1
 sudo apt install xsel xclip
 ```
 
-##### Fedora:
+##### Fedora
 
 ```yml
 sudo dnf install libXtst-devel
@@ -130,7 +130,7 @@ sudo dnf install libxkbcommon-devel libxkbcommon-x11-devel xorg-x11-xkb-utils-de
 sudo dnf install xsel xclip
 ```
 
-## Installation:
+## Installation
 
 With Go module support (Go 1.11+), just import:
 
@@ -146,7 +146,7 @@ go get github.com/go-vgo/robotgo
 
 png.h: No such file or directory? Please see [issues/47](https://github.com/go-vgo/robotgo/issues/47).
 
-## Update:
+## Update
 
 ```
 go get -u github.com/go-vgo/robotgo
@@ -155,7 +155,7 @@ go get -u github.com/go-vgo/robotgo
 Note go1.10.x C file compilation cache problem, [golang #24355](https://github.com/golang/go/issues/24355).
 `go mod vendor` problem, [golang #26366](https://github.com/golang/go/issues/26366).
 
-## [Examples:](https://github.com/go-vgo/robotgo/blob/master/examples)
+## [Examples](https://github.com/go-vgo/robotgo/blob/master/examples)
 
 #### [Mouse](https://github.com/go-vgo/robotgo/blob/master/examples/mouse/main.go)
 
